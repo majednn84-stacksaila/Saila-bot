@@ -2,7 +2,7 @@ import os
 import requests
 from flask import Flask, request
 
-app = Flask(ـــــnameـــــ)
+app = Flask(_name_)
 
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 OPENROUTER_API_KEY = os.environ["OPENROUTER_API_KEY"]
