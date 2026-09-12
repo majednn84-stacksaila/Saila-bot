@@ -5,7 +5,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
-OPENROUTER_API_KEY = os.environ["OPENROUTER_API_KEY"]
+OPENROUTER_API_KEY = os.environ["OPENROUTER_API_KEY"].strip()
 
 TELEGRAM_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
