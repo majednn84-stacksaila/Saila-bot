@@ -17,7 +17,7 @@ SYSTEM_PROMPT = """
 """
 
 def send_message(chat_id, text):
-    requests.post(
+    response = requests.post(
         f"{TELEGRAM_URL}/sendMessage",
         json={
             "chat_id": chat_id,
@@ -25,6 +25,11 @@ def send_message(chat_id, text):
         },
         timeout=30
     )
+
+    print("TELEGRAM STATUS:", response.status_code)
+    print("TELEGRAM RESPONSE:", response.text)
+
+    response.raise_for_status()
 
 def ask_ai(user_message):
     response = requests.post(
